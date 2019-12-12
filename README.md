@@ -1,27 +1,19 @@
-# MyDreamApp
+# Working SSR without @angular-builders/custom-webpack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+```shell
+git checkout 7e2818e44063b6c8f732b2dffd402d63a1a98a17
+npm run build:ssr && npm run serve:ssr
+```
 
-## Development server
+Open http://localhost:4001/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Broken SSR with @angular-builders/custom-webpack
 
-## Code scaffolding
+```shell
+git checkout master
+npm run build:ssr && npm run serve:ssr
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Open http://localhost:4001/ expected `Error: Can't resolve all parameters for ApplicationModule: (?).`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Diff https://github.com/juanfran/angular-9-ssr-custom-builder-issue/commit/20e12cdb42c94bbcead9cde91feb392bb7149825
